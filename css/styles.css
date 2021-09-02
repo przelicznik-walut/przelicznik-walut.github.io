@@ -58,6 +58,7 @@ body {
     font-size: 2rem;
     margin: 1rem auto 2rem;
     font-weight: 600;
+    text-align: center;
 }
 /*! currency list */
 .currency-list {
@@ -247,4 +248,20 @@ input.error:focus {
     font-size: 1rem;
     margin-bottom: 0.3rem;
     margin-left: 0.3rem;
+}
+
+/*
+!==============================================================
+!        New Currency Form
+!==============================================================
+*/
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 1.7rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 1.4rem;
+    }
 }
