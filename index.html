@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przelicznik Walut Alternatywnych</title>
+
+    <link rel="shortcut icon" href="img/kajzerka.png">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <h1 class="title">Przelicznik walut niestandardowych</h1>
+    <div class="currency-list">
+        <button class="currency-item add-currency-button">
+            <span class="plus">+</span>
+            <span class="text">Dodaj nowy przelicznik</span>
+        </button>
+    </div>
+    <div class="new-currency-background" style="display: none">
+        <div class="new-currency-container">
+            <button class="close-form">&times;</button>
+            <div class="form-row">
+                <label for="new-currency-name">Nazwa</label><span></span>
+                <input id="new-currency-name" type="text" placeholder="Kajzerka" autocomplete="off">
+            </div>
+            <div class="form-row">
+                <label for="new-currency-value">Wartość (w PLN)</label><span></span>
+                <input id="new-currency-value" type="text" placeholder="0.28" autocomplete="off">
+                <span class="pln">zł</span>
+            </div>
+            <button class="submit-form">Dodaj</button>
+        </div>
+    </div>
+</body>
+</html>

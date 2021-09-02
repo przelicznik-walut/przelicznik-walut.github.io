@@ -1,0 +1,250 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* create variables */
+:root {
+    --bg: #eee;
+    --bg-l: #eaeaea;
+    --bg-vl: #ddd;
+    --text: black;
+    --text-l: #404040;
+    --acc: #aaa;
+    --acc-l: #555;
+    --acc-vl: black;
+    --red: rgb(219, 57, 60);
+    --red-rgb: 237, 66, 69;
+}
+
+/* normalize margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+!==============================================================
+!        General CSS
+!==============================================================
+*/
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    color: var(--text);
+    margin: 0 auto;
+}
+.hidden {
+    opacity: 0%;
+    display: none;
+}
+
+/*
+!==============================================================
+!        Main Section
+!==============================================================
+*/
+/*! title */
+.title {
+    font-size: 2rem;
+    margin: 1rem auto 2rem;
+    font-weight: 600;
+}
+/*! currency list */
+.currency-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.currency-item {
+    width: 100%;
+    max-width: 250px;
+    padding: 1rem;
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+}
+.currency-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-bottom: 0.2rem;
+    position: relative;
+}
+/*! edit and delete buttons */
+.currency-name .edit,
+.currency-name .delete {
+    border: 1px solid var(--acc);
+    background: none;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.currency-name .edit {
+    position: absolute;
+    right: 24px;
+}
+.currency-name .delete {
+    position: absolute;
+    right: 0;
+}
+.currency-name .edit:hover,
+.currency-name .delete:hover {
+    background: var(--bg-vl);
+}
+.currency-name .edit:active,
+.currency-name .delete:active {
+    background: var(--acc);
+}
+.value-display {
+    font-size: smaller;
+    margin: 0.2rem 0 0 0.4rem;
+}
+/*! all inputs */
+input {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid var(--acc);
+    border-radius: 3px;
+    background-color: var(--bg-l);
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.25s ease;
+}
+input:hover {
+    border-color: var(--acc-l);
+}
+input:focus {
+    border-color: var(--acc-vl);
+}
+input.error {
+    border-color: var(--red);
+    background: rgba(var(--red-rgb), 0.25);
+    color: red;
+}
+input.error:focus {
+    border-color: red;
+}
+/*! add new currency button */
+.add-currency-button {
+    border: none;
+    background: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    opacity: 60%;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    padding-top: 1.8rem;
+    outline: none;
+}
+.add-currency-button:hover {
+    opacity: 100%;
+}
+.add-currency-button .plus {
+    font-size: 3rem;
+    font-weight: 100;
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 5%;
+}
+.add-currency-button .text {
+    font-size: 0.9rem;
+}
+
+/*
+!==============================================================
+!        New Currency Form
+!==============================================================
+*/
+.new-currency-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+}
+.new-currency-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem;
+    background: var(--bg);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.5);
+}
+.new-currency-container .close-form,
+.new-currency-container .submit-form {
+    border: none;
+    background: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6875rem;
+    position: absolute;
+    cursor: pointer;
+}
+.new-currency-container .close-form {
+    right: 0.5rem;
+    top: 0.5rem;
+    font-size: 3rem;
+    font-weight: 100;
+}
+.new-currency-container .submit-form {
+    right: 1.5rem;
+    bottom: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0 0.8rem;
+    border: 1px solid var(--acc-l);
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+.new-currency-container .submit-form:hover,
+.new-currency-container .submit-form:focus {
+    background: var(--bg-vl);
+}
+.new-currency-container .submit-form:active {
+    background: var(--acc);
+}
+.new-currency-container .form-row {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.new-currency-container .form-row span:not([class]) {
+    flex-basis: 100%;
+    width: 0;
+}
+.new-currency-container .form-row label {
+    font-size: larger;
+    margin-bottom: 0.5rem;
+}
+.new-currency-container .form-row input {
+    font-size: 1rem;
+    width: 100px;
+    outline: none;
+}
+#new-currency-name {
+    width: 100%;
+}
+.new-currency-container .form-row .pln {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    margin-left: 0.3rem;
+}
